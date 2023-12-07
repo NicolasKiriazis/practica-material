@@ -3,37 +3,21 @@ import { List, ListItem, ListItemText, ListItemIcon, Divider, ListItemButton } f
 import InboxIcon from "@mui/icons-material/Inbox"
 import DraftsIcon from "@mui/icons-material/Drafts"
 
-const NavbarCoso = () => {
+const NavbarCoso = ({navlinks}) => {
     return (
         <>
-            <Box sx={{ width: 250}}>
+            <Box sx={{ width: 250 }}>
                 <nav>
                     <List>
-                        <ListItem>
-                            <ListItemIcon>
-                                <InboxIcon />
-                            </ListItemIcon>
-                            <ListItemText primary="Inbox"></ListItemText>
-                        </ListItem>
-                        <ListItem>
-                            <ListItemIcon>
-                                <DraftsIcon />
-                            </ListItemIcon>
-                            <ListItemText primary="Drafts"></ListItemText>
-                        </ListItem>
-                        <Divider />
-                        <ListItem disablePadding>
-                            <ListItemButton
-                                component="a"
-                                href="#"
-                            >Trash</ListItemButton>
-                        </ListItem>
-                        <ListItem disablePadding>
-                            <ListItemButton
-                                component="a"
-                                href="#"
-                            >Spam</ListItemButton>
-                        </ListItem>
+                        {navlinks.map(item => (
+                            <ListItem disablePadding key={item.title}>
+                                <ListItemButton
+                                    component="a"
+                                    href={item.path}
+                                ><ListItemText>{item.title}</ListItemText></ListItemButton>
+                            </ListItem>
+                        ))}
+
                     </List>
                 </nav>
             </Box>
