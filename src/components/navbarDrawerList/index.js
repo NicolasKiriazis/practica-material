@@ -1,9 +1,8 @@
 import { Box } from "@mui/system"
-import { List, ListItem, ListItemText, ListItemIcon, Divider, ListItemButton } from "@mui/material"
-import InboxIcon from "@mui/icons-material/Inbox"
-import DraftsIcon from "@mui/icons-material/Drafts"
+import { List, ListItem, ListItemText,ListItemButton } from "@mui/material"
 
-const NavbarCoso = ({navlinks}) => {
+
+const NavbarDrawer= ({navlinks}) => {
     return (
         <>
             <Box sx={{ width: 250 }}>
@@ -25,4 +24,4 @@ const NavbarCoso = ({navlinks}) => {
     )
 }
 
-export default NavbarCoso
+export default NavbarDrawer

@@ -4,14 +4,15 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import './App.css';
 import Navbar from './components/navbar/index'
-import { Container } from '@mui/material';
+import Banner from './components/banner';
+
 
 function App() {
   return (
     <>
 
     <Navbar/>
-    <Container sx={{mt:5}}></Container>
+    <Banner/>
     </>
   );
 }
