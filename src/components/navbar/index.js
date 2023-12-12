@@ -1,4 +1,4 @@
-import { AppBar, Button, Drawer, Toolbar, IconButton, Typography, Container, ThemeProvider, createTheme } from '@mui/material'
+import { AppBar, Button, Drawer, Toolbar, IconButton, Typography, Container, ThemeProvider, createTheme, Divider } from '@mui/material'
 import NavbarDrawer from '../navbarDrawerList/index'
 import { useState } from 'react'
 import MenuIcon from "@mui/icons-material/Menu"
@@ -9,22 +9,22 @@ import "./styles.css"
 
 const Navbar = () => {
 
-    const themeNavbar = createTheme(
-        {
-            palette: {
-                mode: 'light',
-                primary: {
-                  main: '#8a50b9',
-                },
-                secondary: {
-                  main: '#f50057',
-                },
-                info: {
-                  main: '#0288d1',
-                },
-              },
-        }
-    )
+    // const themeNavbar = createTheme(
+    //     {
+    //         palette: {
+    //             mode: 'light',
+    //             primary: {
+    //               main: '#8a50b9',
+    //             },
+    //             secondary: {
+    //               main: '#f50057',
+    //             },
+    //             info: {
+    //               main: '#0288d1',
+    //             },
+    //           },
+    //     }
+    // )
 
 
     const themeButton = createTheme({
@@ -38,7 +38,7 @@ const Navbar = () => {
             },
             info: {
                 main: '#0288d1',
-              },
+            },
         },
     })
 
@@ -50,12 +50,19 @@ const Navbar = () => {
         }
     ]
 
+    const styles = {
+        appBar: {
+            backgroundImage: 'url("https://i.ibb.co/h2JDyYW/nav-mugi-3.png")',
+            backgroundSize: 'cover', // Puedes ajustar esto según tus necesidades
+        }
+    }
+
     const [open, setOpen] = useState(false)
     return (
 
-        <>  
-            <ThemeProvider theme={themeNavbar}> 
-            <AppBar position='static'>
+        <>
+
+            <AppBar position='static' style={styles.appBar} sx={{borderRadius:"5px"}}>
                 <Toolbar>
                     <IconButton
                         color='inherit'
@@ -66,9 +73,9 @@ const Navbar = () => {
 
                     </IconButton>
 
-                    <Container sx={{ flexGrow: { xs: 0, sm: 1, xl: 2 } }}>
+                    <Container sx={{ flexGrow: { xs: 0, sm: 1 } }}>
                         <Typography variant="title" component="a" href="/" >
-                            <img src='https://i.ibb.co/2Ms88N5/logo-mugi.png' alt='logo-mugi' className='logo' height={75}></img>
+                            <img src='https://i.ibb.co/1XTfR31/logopng-blanco.png' alt='logo-mugi' className='logo' height={75}></img>
                         </Typography>
                     </Container>
 
@@ -85,6 +92,7 @@ const Navbar = () => {
                                         href={item.path}
                                         variant='contained'>
                                         {item.title}
+
                                     </Button>
                                 ))
                             }
@@ -93,7 +101,9 @@ const Navbar = () => {
                     </ThemeProvider>
                 </Toolbar>
             </AppBar>
-            </ThemeProvider>
+
+            <Divider/>
+
 
             <Drawer
                 open={open}

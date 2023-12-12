@@ -5,6 +5,10 @@ import '@fontsource/roboto/700.css';
 import './App.css';
 import Navbar from './components/navbar/index'
 import Banner from './components/banner';
+import MyForm from './components/form';
+import ImageGrid from './components/ImageGrid';
+import Footer from './components/footer/index'
+
 
 
 function App() {
@@ -13,6 +17,9 @@ function App() {
 
     <Navbar/>
     <Banner/>
+    <ImageGrid/>
+    <MyForm/>
+    <Footer/>
     </>
   );
 }
